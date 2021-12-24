@@ -44,7 +44,7 @@ Namespace ASPxDashboard_OlapFiltering
 
         Protected Sub ASPxDashboard1_ConfigureDataConnection(ByVal sender As Object,
                                                              ByVal e As ConfigureDataConnectionWebEventArgs)
-            If e.DataSourceName = "olapDataSource1" Then
+            If e.ConnectionName = "olapConnection" Then
                 Dim olapParams As New OlapConnectionParameters()
                 olapParams.ConnectionString = "provider=MSOLAP;" _
                                 & ControlChars.CrLf &

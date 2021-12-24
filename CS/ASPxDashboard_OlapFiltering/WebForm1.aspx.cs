@@ -8,7 +8,6 @@ using DevExpress.DataAccess.ConnectionParameters;
 namespace ASPxDashboard_OlapFiltering {
     public partial class WebForm1 : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
             Dashboard dashboard = new Dashboard();
             dashboard.LoadFromXml(HostingEnvironment.MapPath(@"~/App_Data/Dashboard.xml"));
             PivotDashboardItem pivot1 = (PivotDashboardItem)dashboard.Items[0];
@@ -43,10 +42,10 @@ namespace ASPxDashboard_OlapFiltering {
         }
 
         protected void ASPxDashboard1_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
-            if (e.DataSourceName == "olapDataSource1") {
+            if (e.ConnectionName == "olapConnection") {
                 OlapConnectionParameters olapParams = new OlapConnectionParameters();
                 olapParams.ConnectionString = @"Provider=MSOLAP;
-                                        Data Source=https://demos.devexpress.com/Services/OLAP/msmdpump.dll;  
+                                        Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll;  
                                         Initial catalog=Adventure Works DW Standard Edition;
                                         Cube name=Adventure Works;
                                         Query Timeout=100;";
